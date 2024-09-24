@@ -1,0 +1,1 @@
+touch /home/frappe/frappe-bench/apps/church/requirements.txt
