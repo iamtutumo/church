@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.church-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Member Profile Styles */
+.member-profile {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.member-profile img {
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+.member-details {
+    margin-top: 20px;
+}
+
+/* Contribution Form Styles */
+.contribution-form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.contribution-form label {
+    font-weight: bold;
+}
+
+.contribution-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Event Styles */
+.church-event {
+    background-color: #f0f8ff;
+    border-left: 5px solid #4682b4;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.church-event h3 {
+    color: #4682b4;
+}
+
+/* Dashboard Styles */
+.church-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.dashboard-card h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Custom Indicator Styles */
+.indicator.church-indicator {
+    font-weight: bold;
+}
+
+.indicator.church-indicator.blue {
+    background-color: #4682b4;
+}
+
+.indicator.church-indicator.green {
+    background-color: #2e8b57;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .church-dashboard {
+        flex-direction: column;
+    }
+
+    .dashboard-card {
+        width: 100%;
+    }
+}
+
+/* Custom Button Styles */
+.btn-church {
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-church:hover {
+    background-color: #36648b;
+}
+
+/* Table Styles */
+.church-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.church-table th,
+.church-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.church-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.church-table tr:hover {
+    background-color: #f5f5f5;
+}

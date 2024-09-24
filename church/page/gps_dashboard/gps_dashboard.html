@@ -1,0 +1,47 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="gps-dashboard-container">
+    <h1>Church GPS Dashboard</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="entity-type">Entity Type:</label>
+                <select id="entity-type" class="form-control">
+                    <option value="all">All</option>
+                    <option value="Diocese">Diocese</option>
+                    <option value="Archdeaconry">Archdeaconry</option>
+                    <option value="Parish">Parish</option>
+                    <option value="Sub Parish">Sub Parish</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div id="map" style="height: 500px;"></div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h3>Entity Details</h3>
+            <div id="entity-details"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<style>
+    .gps-dashboard-container {
+        padding: 20px;
+    }
+    #map {
+        border: 1px solid #ccc;
+    }
+</style>
+{% endblock %}
+
+{% block script %}
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="/assets/js/gps_dashboard.js"></script>
+{% endblock %}

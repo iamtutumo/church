@@ -1,0 +1,74 @@
+<div class="member-profile">
+    <div class="row">
+        <div class="col-md-4">
+            {% if member.image %}
+                <img src="{{ member.image }}" alt="{{ member.full_name }}" class="img-fluid rounded-circle mb-3">
+            {% else %}
+                <div class="default-avatar mb-3">{{ member.full_name[0] }}</div>
+            {% endif %}
+        </div>
+        <div class="col-md-8">
+            <h2>{{ member.full_name }}</h2>
+            <p><strong>Member ID:</strong> {{ member.member_id }}</p>
+            <p><strong>Email:</strong> {{ member.email }}</p>
+            <p><strong>Phone:</strong> {{ member.phone }}</p>
+            <p><strong>Date of Birth:</strong> {{ member.date_of_birth }}</p>
+            <p><strong>Address:</strong> {{ member.address }}</p>
+            <p><strong>Parish:</strong> {{ member.parish }}</p>
+            <p><strong>Archdeaconry:</strong> {{ member.archdeaconry }}</p>
+            <p><strong>Diocese:</strong> {{ member.diocese }}</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3>Recent Contributions</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contribution in recent_contributions %}
+                    <tr>
+                        <td>{{ contribution.payment_date }}</td>
+                        <td>{{ contribution.contribution_type }}</td>
+                        <td>{{ contribution.amount }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <h3>Upcoming Events</h3>
+            <ul class="list-group">
+                {% for event in upcoming_events %}
+                <li class="list-group-item">
+                    <h5>{{ event.event_name }}</h5>
+                    <p>Date: {{ event.event_date }} | Time: {{ event.event_time }}</p>
+                    <p>Venue: {{ event.venue }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+    .default-avatar {
+        width: 150px;
+        height: 150px;
+        background-color: #007bff;
+        color: white;
+        font-size: 72px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+</style>

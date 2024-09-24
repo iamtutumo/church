@@ -1,0 +1,76 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Member Portal{% endblock %}
+
+{% block page_content %}
+<div class="member-portal">
+    <h1>Welcome, {{ frappe.session.user }}</h1>
+    
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">My Profile</h5>
+                    <p class="card-text">View and update your personal information.</p>
+                    <a href="/my-profile" class="btn btn-primary">Go to Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">My Contributions</h5>
+                    <p class="card-text">View your contribution history and make new contributions.</p>
+                    <a href="/my-contributions" class="btn btn-primary">View Contributions</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Upcoming Events</h5>
+                    <p class="card-text">See and register for upcoming church events.</p>
+                    <a href="/church-events" class="btn btn-primary">View Events</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3>Recent Announcements</h3>
+            <ul class="list-group">
+                {% for announcement in announcements %}
+                <li class="list-group-item">
+                    <h5>{{ announcement.title }}</h5>
+                    <p>{{ announcement.content[:100] }}...</p>
+                    <small class="text-muted">Posted on {{ announcement.date }}</small>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h3>Quick Links</h3>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="/prayer-requests">Submit Prayer Request</a></li>
+                <li class="list-group-item"><a href="/volunteer-opportunities">Volunteer Opportunities</a></li>
+                <li class="list-group-item"><a href="/church-directory">Church Directory</a></li>
+                <li class="list-group-item"><a href="/bible-study-materials">Bible Study Materials</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block style %}
+<style>
+    .member-portal {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .card {
+        height: 100%;
+    }
+</style>
+{% endblock %}

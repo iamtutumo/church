@@ -1,0 +1,44 @@
+{
+    "name": "Church Payment",
+    "doctype": "DocType",
+    "module": "Church",
+    "is_submittable": 1,
+    "fields": [
+        {
+            "fieldname": "member",
+            "label": "Member",
+            "fieldtype": "Link",
+            "options": "Church Member",
+            "reqd": 1
+        },
+        {
+            "fieldname": "payment_date",
+            "label": "Payment Date",
+            "fieldtype": "Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "amount",
+            "label": "Amount",
+            "fieldtype": "Currency",
+            "reqd": 1
+        },
+        {
+            "fieldname": "payment_method",
+            "label": "Payment Method",
+            "fieldtype": "Select",
+            "options": "Cash\nBank Transfer\nMobile Money\nCheque",
+            "reqd": 1
+        },
+        {
+            "fieldname": "reference_number",
+            "label": "Reference Number",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "notes",
+            "label": "Notes",
+            "fieldtype": "Text Editor"
+        }
+    ]
+}

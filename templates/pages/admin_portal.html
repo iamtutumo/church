@@ -1,0 +1,82 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Admin Portal{% endblock %}
+
+{% block page_content %}
+<div class="admin-portal">
+    <h1>Church Administration Portal</h1>
+    
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Member Management</h5>
+                    <p class="card-text">Manage church members and their information.</p>
+                    <a href="/church/doctype/church_member/church_member_list" class="btn btn-primary">Manage Members</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Contributions</h5>
+                    <p class="card-text">View and manage church contributions.</p>
+                    <a href="/church/doctype/church_payment/church_payment_list" class="btn btn-primary">Manage Contributions</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Events</h5>
+                    <p class="card-text">Create and manage church events.</p>
+                    <a href="/church/doctype/church_event/church_event_list" class="btn btn-primary">Manage Events</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Reports</h5>
+                    <p class="card-text">Generate and view various church reports.</p>
+                    <a href="/church-reports" class="btn btn-primary">View Reports</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3>Quick Actions</h3>
+            <div class="list-group">
+                <a href="/church/doctype/announcement/new-announcement" class="list-group-item list-group-item-action">Create New Announcement</a>
+                <a href="/church/doctype/church_payment/new-church_payment" class="list-group-item list-group-item-action">Record New Contribution</a>
+                <a href="/church/doctype/church_event/new-church_event" class="list-group-item list-group-item-action">Schedule New Event</a>
+                <a href="/church/doctype/prayer_request/prayer_request_list" class="list-group-item list-group-item-action">View Prayer Requests</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>System Overview</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Total Members: <span class="badge badge-primary">{{ total_members }}</span></li>
+                <li class="list-group-item">Total Contributions This Month: <span class="badge badge-success">{{ total_contributions }}</span></li>
+                <li class="list-group-item">Upcoming Events: <span class="badge badge-info">{{ upcoming_events }}</span></li>
+                <li class="list-group-item">Pending Prayer Requests: <span class="badge badge-warning">{{ pending_prayer_requests }}</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block style %}
+<style>
+    .admin-portal {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .card {
+        height: 100%;
+    }
+</style>
+{% endblock %}

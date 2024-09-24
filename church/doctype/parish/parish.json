@@ -1,0 +1,35 @@
+{
+    "name": "Parish",
+    "doctype": "DocType",
+    "module": "Church",
+    "fields": [
+        {
+            "fieldname": "name1",
+            "label": "Name",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "region",
+            "label": "Region",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "archdeaconry",
+            "label": "Archdeaconry",
+            "fieldtype": "Link",
+            "options": "Archdeaconry",
+            "reqd": 1
+        },
+        {
+            "fieldname": "description",
+            "label": "Description",
+            "fieldtype": "Text Editor"
+        },
+        {
+            "fieldname": "gps_coordinates",
+            "label": "GPS Coordinates",
+            "fieldtype": "Data"
+        }
+    ]
+}

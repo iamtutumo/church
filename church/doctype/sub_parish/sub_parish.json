@@ -1,0 +1,35 @@
+{
+    "name": "Sub Parish",
+    "doctype": "DocType",
+    "module": "Church",
+    "fields": [
+        {
+            "fieldname": "name1",
+            "label": "Name",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "region",
+            "label": "Region",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "parish",
+            "label": "Parish",
+            "fieldtype": "Link",
+            "options": "Parish",
+            "reqd": 1
+        },
+        {
+            "fieldname": "description",
+            "label": "Description",
+            "fieldtype": "Text Editor"
+        },
+        {
+            "fieldname": "gps_coordinates",
+            "label": "GPS Coordinates",
+            "fieldtype": "Data"
+        }
+    ]
+}

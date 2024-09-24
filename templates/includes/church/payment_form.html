@@ -1,0 +1,82 @@
+<div class="payment-form">
+    <h2>Make a Contribution</h2>
+    <form id="church-payment-form">
+        <div class="form-group">
+            <label for="contribution_type">Contribution Type</label>
+            <select class="form-control" id="contribution_type" name="contribution_type" required>
+                <option value="">Select Contribution Type</option>
+                {% for type in contribution_types %}
+                <option value="{{ type.name }}">{{ type.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                </div>
+                <input type="number" class="form-control" id="amount" name="amount" step="0.01" min="0" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="payment_method">Payment Method</label>
+            <select class="form-control" id="payment_method" name="payment_method" required>
+                <option value="">Select Payment Method</option>
+                <option value="credit_card">Credit Card</option>
+                <option value="debit_card">Debit Card</option>
+                <option value="bank_transfer">Bank Transfer</option>
+            </select>
+        </div>
+        <div id="credit-card-fields" style="display: none;">
+            <div class="form-group">
+                <label for="card_number">Card Number</label>
+                <input type="text" class="form-control" id="card_number" name="card_number" placeholder="1234 5678 9012 3456">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="expiry_date">Expiry Date</label>
+                    <input type="text" class="form-control" id="expiry_date" name="expiry_date" placeholder="MM/YY">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="cvv">CVV</label>
+                    <input type="text" class="form-control" id="cvv" name="cvv" placeholder="123">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="notes">Notes (Optional)</label>
+            <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Payment</button>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#payment_method').change(function() {
+            if ($(this).val() === 'credit_card' || $(this).val() === 'debit_card') {
+                $('#credit-card-fields').show();
+            } else {
+                $('#credit-card-fields').hide();
+            }
+        });
+
+        $('#church-payment-form').submit(function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            // using AJAX, and then handle the payment processing
+            alert('Payment submitted! (This is a placeholder - implement actual payment processing)');
+        });
+    });
+</script>
+
+<style>
+    .payment-form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+</style>

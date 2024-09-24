@@ -1,0 +1,28 @@
+{
+    "name": "Diocese",
+    "doctype": "DocType",
+    "module": "Church",
+    "fields": [
+        {
+            "fieldname": "name1",
+            "label": "Name",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "region",
+            "label": "Region",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "description",
+            "label": "Description",
+            "fieldtype": "Text Editor"
+        },
+        {
+            "fieldname": "gps_coordinates",
+            "label": "GPS Coordinates",
+            "fieldtype": "Data"
+        }
+    ]
+}

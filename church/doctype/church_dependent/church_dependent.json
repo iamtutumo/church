@@ -1,0 +1,49 @@
+{
+    "name": "Church Dependent",
+    "doctype": "DocType",
+    "module": "Church",
+    "fields": [
+        {
+            "fieldname": "first_name",
+            "label": "First Name",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "last_name",
+            "label": "Last Name",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "date_of_birth",
+            "label": "Date of Birth",
+            "fieldtype": "Date"
+        },
+        {
+            "fieldname": "gender",
+            "label": "Gender",
+            "fieldtype": "Select",
+            "options": "Male\nFemale"
+        },
+        {
+            "fieldname": "relationship",
+            "label": "Relationship",
+            "fieldtype": "Select",
+            "options": "Child\nSpouse\nSibling\nParent\nOther",
+            "reqd": 1
+        },
+        {
+            "fieldname": "parent_member",
+            "label": "Parent Member",
+            "fieldtype": "Link",
+            "options": "Church Member",
+            "reqd": 1
+        },
+        {
+            "fieldname": "notes",
+            "label": "Notes",
+            "fieldtype": "Text Editor"
+        }
+    ]
+}

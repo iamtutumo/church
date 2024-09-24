@@ -1,0 +1,70 @@
+{
+    "name": "Church Member",
+    "doctype": "DocType",
+    "module": "Church",
+    "fields": [
+        {
+            "fieldname": "title",
+            "label": "Title",
+            "fieldtype": "Select",
+            "options": "Mr\nMrs\nMs\nDr\nProf"
+        },
+        {
+            "fieldname": "first_name",
+            "label": "First Name",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "last_name",
+            "label": "Last Name",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "middle_name",
+            "label": "Middle Name",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "date_of_birth",
+            "label": "Date of Birth",
+            "fieldtype": "Date"
+        },
+        {
+            "fieldname": "gender",
+            "label": "Gender",
+            "fieldtype": "Select",
+            "options": "Male\nFemale"
+        },
+        {
+            "fieldname": "phone",
+            "label": "Phone",
+            "fieldtype": "Phone"
+        },
+        {
+            "fieldname": "email",
+            "label": "Email",
+            "fieldtype": "Data",
+            "options": "Email"
+        },
+        {
+            "fieldname": "sub_parish",
+            "label": "Sub Parish",
+            "fieldtype": "Link",
+            "options": "Sub Parish"
+        },
+        {
+            "fieldname": "unique_payment_id",
+            "label": "Unique Payment ID",
+            "fieldtype": "Data",
+            "read_only": 1
+        },
+        {
+            "fieldname": "total_contributions",
+            "label": "Total Contributions",
+            "fieldtype": "Currency",
+            "read_only": 1
+        }
+    ]
+}
