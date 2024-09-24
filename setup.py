@@ -11,8 +11,11 @@ try:
 except FileNotFoundError:
     install_requires = []
 
-# get version from __version__ variable in church/__init__.py
-from church import __version__ as version
+# Get version
+try:
+    from church import __version__ as version
+except ImportError:
+    version = '0.0.1'
 
 setup(
     name="church",
